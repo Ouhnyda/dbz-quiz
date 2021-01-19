@@ -30,7 +30,11 @@ class Firebase {
     this.auth.signInWithEmailAndPassword(email, password);
 
     // Deconnexion :
-    signOutUser = () => this.auth.signOut()
+    signOutUser = () => this.auth.signOut();
+
+    // Recup Password :
+    passwordReset = (email) => 
+    this.auth.sendPasswordResetEmail(email);
 }
 
 export default Firebase;

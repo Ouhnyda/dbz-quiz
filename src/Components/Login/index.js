@@ -67,6 +67,8 @@ const Login = (props) => {
                     </form>
                     <div className="linkContainer">
                         <Link className="simpleLink" to="/signUp">Tu es nouveau ? Inscris-toi ici maintenant.</Link>
+                        <br />
+                        <Link className="simpleLink" to="/forgetpassword">Mot de passe oublié ? cliquer ici</Link>
                     </div>
             </div>
         </div>
