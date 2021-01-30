@@ -25,13 +25,22 @@ const SignUp = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        const {email, password} = loginData;
+        const {email, password, pseudo} = loginData;
         firebase.signUpUser(email, password)
-        .then(user => {
+
+        .then( authUser => {
+            return firebase.user(authUser.user.uid).set({
+                pseudo,
+                email
+            })
+        })
+
+        .then(() => {
             setLoginData({...data});
-            alert('ok')
+            alert('Inscription réussi !')
             props.history.push('/welcome')
         })
+
         .catch(error => {
             setError(error);
             setLoginData({...data});
