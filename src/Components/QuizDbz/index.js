@@ -1,8 +1,8 @@
-export const quizDbz = [
+export const QuizDbz = [
     {
         fournisseur: "DOS SANTOS Dany",
         sujet: "Quiz sur l'univers de Dragon Ball Z",
-        quiz:{
+        quizz:{
             debutant: [
                 {
                     id: 1,
@@ -11,7 +11,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -22,7 +22,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -44,7 +44,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -55,7 +55,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -66,7 +66,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -77,7 +77,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -88,7 +88,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -99,7 +99,18 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
+                    ],
+                    answer: "Son Goku",
+                },
+                {
+                    id: 10,
+                    question: "Comment s'appelle le personnage principal ?",
+                    options: [
+                        "Son Goku",
+                        "Son Gohan",
+                        "Son Goten",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 }
@@ -112,7 +123,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -123,7 +134,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -134,7 +145,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -145,7 +156,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -156,7 +167,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -167,7 +178,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -178,7 +189,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -189,7 +200,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -200,7 +211,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -211,7 +222,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -224,7 +235,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -235,7 +246,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -246,7 +257,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -257,7 +268,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -268,7 +279,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -279,7 +290,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -290,7 +301,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -301,7 +312,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -312,7 +323,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
@@ -323,7 +334,7 @@ export const quizDbz = [
                         "Son Goku",
                         "Son Gohan",
                         "Son Goten",
-                        "Son Gofor",
+                        "Son Gofor"
                     ],
                     answer: "Son Goku",
                 },
