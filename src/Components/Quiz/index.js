@@ -12,7 +12,9 @@ class Quiz extends Component {
         storedQuestions: [],
         question: null,
         options: [],
-        idQuestion: 0
+        idQuestion: 0,
+        btnDisabled: true,
+        userAnswer: null
     }
 
     loadQuestions = quiz => {
@@ -50,12 +52,23 @@ class Quiz extends Component {
         }
     }
     
+    submitAnswer = selectedAnswer => {
+        this.setState({
+            userAnswer: selectedAnswer,
+            btnDisabled: false
+        })
+    }   
     
     render(){
 
         const displayOption = this.state.options.map((optionss, index) => {
             return ( 
-            <p key={index} className="answerOptions">{optionss}</p>
+            <p  key={index} 
+                onClick={() => this.submitAnswer(optionss)} 
+                className={`answerOptions ${this.state.userAnswer === optionss ? "selected" : null}`}
+            >
+                {optionss}
+            </p>
             )
         })
 
@@ -72,7 +85,7 @@ class Quiz extends Component {
                 
                 {displayOption}
 
-                <button className="btnSubmit">Question suivante</button>
+                <button disabled={this.state.btnDisabled} className="btnSubmit">Question suivante</button>
 
             </div>
         </div>
