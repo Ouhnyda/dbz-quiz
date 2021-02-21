@@ -14,8 +14,11 @@ class Quiz extends Component {
         options: [],
         idQuestion: 0,
         btnDisabled: true,
-        userAnswer: null
+        userAnswer: null,
+        score: 0
     }
+
+    storedDataRef = React.createRef();
 
     loadQuestions = quiz => {
 
@@ -24,6 +27,8 @@ class Quiz extends Component {
         const fetchedArrayQuiz = QuizDbz[0].quizz[quiz];
         console.log(fetchedArrayQuiz)
         if (fetchedArrayQuiz.length >= this.state.maxQuestion) {
+
+            this.storedDataRef.current = fetchedArrayQuiz;
 
             // const qui va permettre de "cacher" la réponse via sur ReactDevTools :
           const newArray = fetchedArrayQuiz.map( ({answer, ...keepRest}) => keepRest );
@@ -43,11 +48,36 @@ class Quiz extends Component {
         this.loadQuestions(this.state.levelNames[this.state.quizLevel])
     }
 
+    nextQuestion = () => {
+        if(this.state.idQuestion === this.state.maxQuestion -1){
+            //end
+        }else{
+            this.setState(prevState => ({
+                idQuestion: prevState.idQuestion +1
+            }))
+        }
+        const goodAnswer = this.storedDataRef.current[this.state.idQuestion].answer;
+        if(this.state.userAnswer === goodAnswer) {
+            this.setState(prevState => ({
+                score: prevState.score +1
+            }))
+        }
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (this.state.storedQuestions !== prevState.storedQuestions) {
             this.setState({
                 question: this.state.storedQuestions[this.state.idQuestion].question,
                 options:  this.state.storedQuestions[this.state.idQuestion].options
+            })
+        }
+
+        if(this.state.idQuestion !== prevState.idQuestion){
+            this.setState({
+                question: this.state.storedQuestions[this.state.idQuestion].question,
+                options:  this.state.storedQuestions[this.state.idQuestion].options,
+                userAnswer: null,
+                btnDisabled: true
             })
         }
     }
@@ -57,7 +87,9 @@ class Quiz extends Component {
             userAnswer: selectedAnswer,
             btnDisabled: false
         })
-    }   
+    }
+
+    
     
     render(){
 
@@ -85,7 +117,13 @@ class Quiz extends Component {
                 
                 {displayOption}
 
-                <button disabled={this.state.btnDisabled} className="btnSubmit">Question suivante</button>
+                <button 
+                disabled={this.state.btnDisabled} 
+                className="btnSubmit"
+                onClick={this.nextQuestion}
+                >
+                Question suivante
+                </button>
 
             </div>
         </div>
