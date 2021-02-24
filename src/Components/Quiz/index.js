@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 import Levels from '../Levels'
 import ProgressBar from '../ProgressBar'
+import QuizOver from '../QuizOver'
 import {QuizDbz} from '../QuizDbz/';
-
+    
 toast.configure();
 
 class Quiz extends Component {
@@ -20,7 +21,8 @@ class Quiz extends Component {
         btnDisabled: true,
         userAnswer: null,
         score: 0,
-        showWelcomeMsg: false
+        showWelcomeMsg: false,
+        quizEnd: false
     }
 
     storedDataRef = React.createRef();
@@ -75,7 +77,7 @@ class Quiz extends Component {
 
     nextQuestion = () => {
         if(this.state.idQuestion === this.state.maxQuestion -1){
-            //end
+            this.gameOver();
         }else{
             this.setState(prevState => ({
                 idQuestion: prevState.idQuestion +1
@@ -137,6 +139,12 @@ class Quiz extends Component {
         })
     }
 
+    gameOver = () =>{
+        this.setState({
+            quizEnd: true,
+        })
+    }
+
     
     
     render(){
@@ -154,11 +162,15 @@ class Quiz extends Component {
 
     const {pseudo, email} = this.props.userData;
 
-    return (
+    return this.state.quizEnd ? (
+        <QuizOver/>
+    )
+    :
+    (
         <div>
             <h2>Bonjour {pseudo} !</h2>
             <h2>Voici votre mail : {email}</h2>
-            <div>
+            <Fragment>
                 <Levels />
                 <ProgressBar />
                 <h2>{this.state.question}</h2>
@@ -173,7 +185,7 @@ class Quiz extends Component {
                 Question suivante
                 </button>
 
-            </div>
+            </Fragment>
         </div>
     )
     }
