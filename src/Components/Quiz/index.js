@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 import Levels from '../Levels'
 import ProgressBar from '../ProgressBar'
-import {QuizDbz} from '../QuizDbz/'
+import {QuizDbz} from '../QuizDbz/';
+
+toast.configure();
 
 class Quiz extends Component {
 
@@ -15,7 +19,8 @@ class Quiz extends Component {
         idQuestion: 0,
         btnDisabled: true,
         userAnswer: null,
-        score: 0
+        score: 0,
+        showWelcomeMsg: false
     }
 
     storedDataRef = React.createRef();
@@ -42,6 +47,26 @@ class Quiz extends Component {
         }
     }
 
+    showWelcomeMessage = pseudo => {
+
+        if(!this.state.showWelcomeMsg){
+
+            this.setState({
+                showWelcomeMsg: true
+            })
+
+        toast.warn(`salut ${pseudo}, bon courage`, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            bodyClassName: "toastify-color-welcome",
+            });
+        }
+    }
+
     // Methode permettant d'invoquer loadQuestion() :
 
     componentDidMount() {
@@ -61,6 +86,25 @@ class Quiz extends Component {
             this.setState(prevState => ({
                 score: prevState.score +1
             }))
+            toast.success('Bonne réponse', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                bodyClassName: "toastify-color",
+                });
+        }else{
+            toast.error('Mauvaise réponse', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                bodyClassName: "toastify-color",
+                });
         }
     }
 
@@ -79,6 +123,10 @@ class Quiz extends Component {
                 userAnswer: null,
                 btnDisabled: true
             })
+        }
+
+        if(this.props.userData.pseudo){
+            this.showWelcomeMessage(this.props.userData.pseudo);
         }
     }
     
