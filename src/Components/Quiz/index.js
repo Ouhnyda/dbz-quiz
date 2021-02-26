@@ -13,7 +13,7 @@ class Quiz extends Component {
     state = {
         levelNames: ["debutant",'confirme',"expert"],
         quizLevel: 0,
-        maxQuestion: 10,
+        maxQuestion: 3,
         storedQuestions: [],
         question: null,
         options: [],
@@ -172,7 +172,10 @@ class Quiz extends Component {
             <h2>Voici votre mail : {email}</h2>
             <Fragment>
                 <Levels />
-                <ProgressBar />
+                <ProgressBar 
+                    idQuestion={this.state.idQuestion}
+                    maxQuestion={this.state.maxQuestion}
+                 />
                 <h2>{this.state.question}</h2>
                 
                 {displayOption}
@@ -182,7 +185,7 @@ class Quiz extends Component {
                 className="btnSubmit"
                 onClick={this.nextQuestion}
                 >
-                Question suivante
+                {this.state.idQuestion < this.state.maxQuestion - 1 ? "suivant" : "Terminer"}
                 </button>
 
             </Fragment>

@@ -19,8 +19,9 @@ const Logout = () => {
 
     return (
         <div className="logoutContainer">
+            
             <label className="switch">
-
+            
             <input onChange={handleChange} type="checkbox" checked={checked} />
 
             <span className="slider round"></span>
